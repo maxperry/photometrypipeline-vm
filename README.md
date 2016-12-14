@@ -1,9 +1,9 @@
 # PhotoPipe VM
-A Debian-based, Vagrant virtual machine for running [PhotoPipe](https://github.com/maxperry/photometrypipeline), an automated photometry pipeline.
+A Debian 8.6, Vagrant virtual machine for running [PhotoPipe](https://github.com/maxperry/photometrypipeline), an automated photometry pipeline.
 
 Works with macOS and Linux.
 
-# Installation
+## Installation
 
 #### 1) [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) installer for your operating system.
 **Note 1:** version 5.1.10 or higher is required due to a [bug](https://www.virtualbox.org/ticket/16084) affecting `urllib`.
@@ -34,16 +34,38 @@ $ sudo ./start.sh
 ```
 This will SSH into the virtual machine. When required for the login password, type `vagrant`. Root password is also `vagrant`.
 
-#### Stopping the VM
-Run the following command from the `photopipe-vm` folder where the VM is located
+## Usage
+Run all the commands below from the `photopipe-vm` folder where the VM is located.
 
+#### Stopping the VM
 ```
+$ cd photopipe-vm
 $ vagrant suspend
 ```
-To resume the VM always do 
+#### Resuming the VM
 
 ```
+$ cd photopipe-vm
 $ ./start.sh
 ```
 
+#### Removing the VM
+
+```
+$ cd photopipe-vm
+$ vagrant destroy
+```
+
 See [Vagrant Getting Started](https://www.vagrantup.com/docs/getting-started/) docs for other commands.
+
+## Configuration
+The virtual machine is configured with 2 CPU cores and 4GB of RAM. These and other parameters can be edited from the [Vagrantfile](). 
+
+```
+config.vm.provider "virtualbox" do |vb|
+	vb.memory = "4096"
+	vb.cpus = "2"
+end
+```
+
+See [here](https://www.vagrantup.com/docs/vagrantfile/) for a full description.
