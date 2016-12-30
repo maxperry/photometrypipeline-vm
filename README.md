@@ -59,11 +59,11 @@ $ vagrant destroy
 See [Vagrant Getting Started](https://www.vagrantup.com/docs/getting-started/) docs for other commands.
 
 ## Configuration
-The virtual machine is configured with 2 CPU cores and 4GB of RAM. These and other parameters can be edited from the [Vagrantfile](). 
+The virtual machine is configured with 2 CPU cores and 2GB of RAM. These and other parameters can be edited from the [Vagrantfile](). 
 
 ```
 config.vm.provider "virtualbox" do |vb|
-	vb.memory = "4096"
+	vb.memory = "2048"
 	vb.cpus = "2"
 end
 ```
