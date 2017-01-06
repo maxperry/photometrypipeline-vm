@@ -32,7 +32,7 @@ $ git clone git@github.com:maxperry/photometrypipeline-vm.git
 $ chmod +x start.sh
 $ sudo ./start.sh
 ```
-This will SSH into the virtual machine. When required for the login password, type `vagrant`. Root password is also `vagrant`.
+This will download the VM box from [VagrantCloud](https://vagrantcloud.com/maxperry/boxes/photopipe/) (~1GB), setup the VM with Vagrant (will prompt for your host machine root password), and finally SSH into the virtual machine. When required for the login password, type `vagrant`. Root password for the VM is also `vagrant`.
 
 ## Usage
 Run all the commands below from the `photopipe-vm` folder where the VM is located.
